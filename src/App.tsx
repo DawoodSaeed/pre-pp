@@ -1,9 +1,19 @@
+import { useState } from "react";
 import "./App.css";
+import AutoCounter from "./components/AutoCcounter";
 
 function App() {
+  const [showCounter, setShowCounter] = useState(true);
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      {showCounter && <AutoCounter />}
+      <p
+        onClick={() => {
+          setShowCounter(!showCounter);
+        }}
+      >
+        show counter
+      </p>
     </>
   );
 }
